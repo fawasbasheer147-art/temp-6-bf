@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Edin & Nyrah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+     <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- Confetti Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        window.onerror = function (msg, url, lineNo, columnNo, error) {
+            alert("Error: " + msg + " (Line " + lineNo + ")");
+            return false;
+        };
+    </script>
+
+    <!-- SEO & Social Media Meta Tags -->
+    <meta name="description" content="With joy in our hearts, we invite you to celebrate our nikah.">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://temp-6-bf.vercel.app/">
+    <meta property="og:title" content="Nikah Invitation | Edin & Nyrah">
+    <meta property="og:description" content="With joy in our hearts, we invite you to celebrate our nikah.">
+    <meta property="og:image" content="https://temp-6-bf.vercel.app/assests/images/cover.png">
+</head>
+
+<body>
+    <audio id="bgMusic" loop>
+        <source src="assests/audio/music1.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggle" class="music-toggle" aria-label="Toggle music">
+        <iconify-icon icon="lucide:volume-x" id="musicIcon" style="font-size: 20px; color: var(--text-primary); display: flex; align-items: center; justify-content: center;"></iconify-icon>
+    </button>
+
+    <section class="hero-section">
+        <div class="video-container">
+
+      <img id="videoPoster"
+         src="assests/images/first.png"
+         class="video-placeholder">
+
+    <video id="curtainVideo" playsinline webkit-playsinline preload="auto" muted>
+        <source src="assests/videos/nadavd.mp4" type="video/mp4">
+    </video>
+    <video id="followupVideo" class="followup-video" playsinline webkit-playsinline preload="auto" loop>
+        <source src="assests/videos/2.mp4" type="video/mp4">
+    </video>
+    <canvas id="transitionFrame" class="transition-frame"></canvas>
+
+    <div id="followupContent" class="followup-content" aria-hidden="true">
+        <div class="followup-copy">
+            <p class="small-text followup-kicker">TOGETHER WITH<br>THEIR FAMILIES</p>
+            <h1 class="names followup-names">Edin<br><span class="ampersand">-♡-</span><br>Nyrah</h1>
+            <p class="small-text followup-invitation">WITH THE BLESSINGS OF ALLAH<br>AND THE LOVE OF OUR FAMILIES,<br>WE CORDIALLY INVITE YOU<br>TO THE NIKAH CEREMONY</p>
+        </div>
+        <div class="scroll-indicator-container followup-scroll">
+            <div class="scroll-indicator-bar"></div>
+            <span class="scroll-indicator-text">scroll</span>
+        </div>
+    </div>
+
+    <div id="playOverlay" class="overlay">
+        <div class="play-button">
+            <iconify-icon icon="majesticons:hand-click-line" class="hand-icon"></iconify-icon>
+        </div>
+        <p class="tap-text">Open Invitation</p>
+    </div>
+
+</div>
+
+    </section>
+
+    <!-- Next Page Section -->
+    
+<!-- SECOND PAGE: WEDDING INVITATION -->
+<section class="details-section" id="detailsSection">
+
+    <div class="details-luxury">
+
+        <!-- Decorative top ornament -->
+        
+
+        <!-- Bismillah -->
+        <div class="bismillah-block scroll-animate">
+            <h2>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
+            <p>
+                In the name of Allah<br>
+                The Most Gracious and the Most Merciful
+            </p>
+        </div>
+
+        <!-- Invitation introduction -->
+        <div class="details-intro scroll-animate">
+            
+            <p>
+                With immense joy and gratitude,
+                we invite you to grace the
+                auspicious occasion of the Nikah of
+            </p>
+        </div>
+
+        <!-- Bride -->
+        <div class="person-block scroll-animate">
+            <div class="person-name">Edin</div>
+
+          
+
+            <p class="person-parents">
+                Son of
+                Father
+                & Mother
+            </p>
+
+
+            <p class="person-address">
+               Place
+            </p>
+        </div>
+
+        <!-- With -->
+        <div class="with-divider scroll-animate">
+            <span></span>
+            <p>with</p>
+            <span></span>
+        </div>
+
+        <!-- Groom -->
+        <div class="person-block groom-block scroll-animate">
+            <div class="person-name">Nyrah</div>
+
+            
+
+            <p class="person-parents">
+                Son of 
+                Father
+                & Mother
+            </p>
+
+            <p class="person-address">
+               Place
+               
+            </p>
+        </div>
+
+        <!-- Bottom ornament -->
+        
+
+        <img
+            src="assests/images/fl.png"
+            alt=""
+            class="details-ring"
+        />
+
+    </div>
+      <div class="page-divider">
+        <img src="assests/images/divider.png" alt="">
+    </div>
+</section>
+
+    <!-- Scratch Page Section -->
+    <section class="scratch-section">
+        <div class="content-wrapper scroll-animate">
+            <p class="reveal-text">Reveal</p>
+            <p class="discover-text">SCRATCH TO<br>DISCOVER THE DATE</p>
+
+            <div class="scratch-container">
+                <div class="scratch-card">
+                    <div class="scratch-base"><span class="scratch-date">08</span></div>
+                    <canvas class="scratch-canvas" width="90" height="90"></canvas>
+                </div>
+                <div class="scratch-card">
+                    <div class="scratch-base"><span class="scratch-date">NOV</span></div>
+                    <canvas class="scratch-canvas" width="90" height="90"></canvas>
+                </div>
+                <div class="scratch-card">
+                    <div class="scratch-base"><span class="scratch-date">2026</span></div>
+                    <canvas class="scratch-canvas" width="90" height="90"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="venue-section">
+        <div class="venue-container scroll-animate">
+            <img src="assests/images/SAVE.png" class="save-image" alt="Save The Date">
+            
+            <!-- Minimal Countdown Section -->
+            <div class="minimal-countdown" style="margin-bottom: 20px;">
+                <p style="font-family: 'Marquis', serif; font-style: italic; font-size: 1.9rem; color: var(--text-primary); margin-bottom: 15px;">Days to Go...</p>
+
+                <div class="timer" style="margin-top: 15px; gap: 20px;">
+                    <div class="time-block-minimal">
+                        <span id="days">00</span>
+                        <p>Days</p>
+                    </div>
+                    <div class="time-block-minimal">
+                        <span id="hours">00</span>
+                        <p>Hours</p>
+                    </div>
+                    <div class="time-block-minimal">
+                        <span id="minutes">00</span>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="time-block-minimal">
+                        <span id="seconds">00</span>
+                        <p>Secs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Itinerary Section -->
+   
+
+    <!-- Venue Section -->
+     <!-- Venue / Events Section -->
+<section class="venue-section">
+    <div class="venue-container scroll-animate">
+
+        <h2 class="venue-title">Event</h2>
+
+        <div class="event-venue-list">
+
+            <!-- NIKKAH -->
+            <div class="event-venue-card">
+
+               
+
+                <div class="event-venue-content">
+
+                    <p class="event-venue-label">NIKKAH</p>
+
+                    <div class="event-venue-divider"></div>
+
+                    <p class="event-venue-date">
+                        15th November 2026
+                    </p>
+
+                    <p class="event-venue-time">
+                        10:30 AM
+                    </p>
+                    <p class="event-venue-date">
+                       LUNCH AT
+                    </p>
+                    <p class="event-venue-time">
+                        12:30 PM TO 02:30 PM
+                    </p>
+
+                    <div class="event-venue-location">
+                       
+
+                        <div>
+                            <p class="location-title">At Rosewood Convention Hall</p>
+                            <p class="location-place">Kozhikode</p>
+                        </div>
+                    </div>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&amp;query=Rosewood+Convention+Hall%2C+Kozhikode"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="map-link"
+                    >
+                        <span>View Location</span>
+                        <span class="map-arrow">↗</span>
+                    </a>
+
+                    <p class="map-hint">
+                        Tap to view location on Google Maps
+                    </p>
+
+                </div>
+            </div>
+
+
+            <!-- RECEPTION -->
+           <!-- RECEPTION -->
+
+   
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    <section class="rsvp-section" id="rsvpSection">
+        <div class="scroll-animate">
+            <h2 class="rsvp-title">RSVP</h2>
+            <p class="rsvp-sub">Will you be attending?</p>
+            <div class="rsvp-buttons">
+                <button class="rsvp-btn yes" id="yesBtn">Yes, I'll be there!</button>
+                <button class="rsvp-btn no" id="noBtn">Sorry, I can't make it</button>
+            </div>
+            <p class="rsvp-message" id="rsvpMessage"></p><br><br><br>
+        </div>
+         
+    </section>
+
+    <section class="thankyou-section">
+        <div class="thankyou-container scroll-animate">
+           
+            <img src="assests/images/insha.png" class="insha-image" alt="Insha Allah">
+            <img src="assests/images/bl-fl.png" alt="Ring" class="bl" style="margin: 0 auto;">
+        </div>
+    </section>
+
+    <div class="branding-bar" style="background-color: var(--bg-color); padding: 25px 15px; text-align: center; border: none !important;">
+        <a href="https://www.instagram.com/leora.invite/" target="_blank" rel="noopener noreferrer"
+            style="text-decoration: none; color: var(--text-primary); font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 1.5px; opacity: 0.8;">
+            created with love - team.leora
+        </a>
+    </div>
+
+    <script src="script.js?v=6"></script>
+</body>
+
+</html>
