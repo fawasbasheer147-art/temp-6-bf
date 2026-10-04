@@ -83,6 +83,10 @@
 
 </div>
 
+    <div class="page-divider" aria-hidden="true">
+        <img src="assests/images/divider.png" alt="">
+    </div>
+
     </section>
 
     <!-- Next Page Section -->
@@ -167,9 +171,6 @@
         />
 
     </div>
-      <div class="page-divider">
-        <img src="assests/images/divider.png" alt="">
-    </div>
 </section>
 
     <!-- Scratch Page Section -->
@@ -230,7 +231,7 @@
 
     <!-- Venue Section -->
      <!-- Venue / Events Section -->
-<section class="venue-section">
+<section class="venue-section events-section">
     <div class="venue-container scroll-animate">
 
         <h2 class="venue-title">Event</h2>
@@ -304,15 +305,50 @@
 
     <section class="rsvp-section" id="rsvpSection">
         <div class="scroll-animate">
-            <h2 class="rsvp-title">RSVP</h2>
-            <p class="rsvp-sub">Will you be attending?</p>
-            <div class="rsvp-buttons">
-                <button class="rsvp-btn yes" id="yesBtn">Yes, I'll be there!</button>
-                <button class="rsvp-btn no" id="noBtn">Sorry, I can't make it</button>
-            </div>
-            <p class="rsvp-message" id="rsvpMessage"></p><br><br><br>
+            <p class="rsvp-eyebrow">A JOYFUL CELEBRATION</p>
+            <h2 class="rsvp-title">Kindly Respond</h2>
+            <p class="rsvp-sub">Your presence would make our day complete.</p>
+
+            <form class="rsvp-form" id="rsvpForm">
+                <label class="rsvp-field-label" for="rsvpName">Your name</label>
+                <input class="rsvp-text-input" id="rsvpName" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required>
+
+                <fieldset class="rsvp-attendance">
+                    <legend class="rsvp-field-label">Will you be joining us?</legend>
+                    <div class="rsvp-choice-list">
+                        <label class="rsvp-choice">
+                            <input type="radio" name="attendance" value="yes" required>
+                            <span class="rsvp-choice-dot" aria-hidden="true"></span>
+                            <span class="rsvp-choice-text">Joyfully accepts</span>
+                        </label>
+                        <label class="rsvp-choice">
+                            <input type="radio" name="attendance" value="no">
+                            <span class="rsvp-choice-dot" aria-hidden="true"></span>
+                            <span class="rsvp-choice-text">Regretfully declines</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="rsvp-guests" id="rsvpGuests" hidden>
+                    <label class="rsvp-field-label" for="guestCount">How many people will be attending?</label>
+                    <select class="rsvp-text-input" id="guestCount" name="guestCount" disabled>
+                        <option value="">Select total attending</option>
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6 people</option>
+                        <option value="7">7 people</option>
+                        <option value="8">8 people</option>
+                    </select>
+                </div>
+
+                <button class="rsvp-submit" type="submit">Send your response <span aria-hidden="true">✦</span></button>
+                <p class="rsvp-message" id="rsvpMessage" role="status" aria-live="polite"></p>
+            </form>
+            <p class="rsvp-note">With love and warm wishes, Edin &amp; Nyrah</p>
         </div>
-         
     </section>
 
     <section class="thankyou-section">
