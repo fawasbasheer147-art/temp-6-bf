@@ -1018,6 +1018,18 @@ hr {
     max-width: 90%;
     margin: -40px auto 80px auto;
     display: block;
+    filter: drop-shadow(0 14px 11px rgba(0, 0, 0, 0.38))
+        drop-shadow(0 4px 4px rgba(97, 11, 20, 0.22));
+    animation: save-image-float 4s ease-in-out infinite;
+}
+
+@keyframes save-image-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 .insha-image {
@@ -2541,6 +2553,15 @@ hr {
     max-width: 90%;
     margin: -40px auto 80px auto;
     display: block;
+    filter: drop-shadow(0 14px 11px rgba(0, 0, 0, 0.38))
+        drop-shadow(0 4px 4px rgba(97, 11, 20, 0.22));
+    animation: save-image-float 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .save-image {
+        animation: none;
+    }
 }
 
 .insha-image {
@@ -3145,7 +3166,7 @@ hr {
 
 .details-intro p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
+    font-size: 0.90rem;
     font-weight: 400;
     line-height: 1.65;
     letter-spacing: 0.035em;
@@ -3606,8 +3627,25 @@ hr {
 }
 
 .events-section {
+    position: relative;
+    isolation: isolate;
     background-color: #610B14;
     color: #fff8e9;
+    padding: 58px 20px;
+}
+
+.events-section .venue-container {
+    max-width: 470px;
+}
+
+.events-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url("assests/images/bg1.png") center / cover no-repeat;
+    opacity: 0.12;
+    pointer-events: none;
 }
 
 .events-section .venue-title,
@@ -3629,12 +3667,50 @@ hr {
 }
 
 .events-section .event-venue-card {
-    padding: 0;
+    padding: 32px 26px;
     overflow: visible;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
+    background: rgba(255, 248, 233, 0.06);
+    border: 1px solid rgba(234, 212, 173, 0.3);
+    border-radius: 22px;
+    box-shadow: 0 14px 32px rgba(28, 0, 4, 0.2);
+}
+
+.events-section .event-venue-list {
+    max-width: 430px;
+    margin-top: 26px;
+}
+
+.events-section .venue-title {
+    margin-bottom: 18px;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+}
+
+.events-section .event-venue-label {
+    font-size: 1.85rem;
+    letter-spacing: 2px;
+}
+
+.events-section .event-venue-date {
+    font-size: 1.2rem;
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+}
+
+.events-section .event-venue-time {
+    font-size: 0.76rem;
+    line-height: 1.6;
+    letter-spacing: 1.6px;
+}
+
+.events-section .location-title {
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.events-section .location-place {
+    font-size: 0.72rem;
+    letter-spacing: 2.2px;
 }
 
 .events-section .event-venue-card::before,
@@ -3645,4 +3721,1078 @@ hr {
 .events-section .map-link {
     color: #ead4ad;
     border-color: rgba(234, 212, 173, 0.65);
+}/* ==========================================
+   SECOND PAGE
+========================================== */
+
+.details-section {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0 20px 80px;
+
+    background: #610B14 !important;
+
+    color: #fff8e9;
+
+    overflow: hidden;
+
+    border: none !important;
+    outline: none !important;
+}
+
+
+/* ==========================================
+   CURVED TRANSITION
+========================================== */
+
+.curved-transition {
+    position: relative;
+
+    width: 100%;
+    height: 110px;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #610B14;
+
+    border: none !important;
+    outline: none !important;
+
+    line-height: 0;
+
+    z-index: 20;
+}
+
+
+/* SVG */
+
+.curved-transition svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    outline: none;
+}
+
+
+/* ==========================================
+   BURGUNDY FILL
+========================================== */
+
+.burgundy-fill {
+    fill: #610B14;
+    stroke: none;
+}
+
+
+/* ==========================================
+   CREAM FILL
+========================================== */
+
+.cream-fill {
+    fill: var(--bg-color);
+    stroke: none;
+}
+
+
+/* ==========================================
+   GOLD CURVE
+========================================== */
+
+.curve-border {
+    fill: none;
+
+    stroke: #ead4ad;
+
+    stroke-width: 2;
+
+    vector-effect: non-scaling-stroke;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* ==========================================
+   SCRATCH SECTION
+========================================== */
+
+.scratch-section {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 10px 20px 120px;
+
+    background: var(--bg-color) !important;
+
+    color: var(--text-primary);
+
+    border: none !important;
+    border-top: none !important;
+
+    outline: none !important;
+    box-shadow: none !important;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   OLD DIVIDER OFF
+========================================== */
+
+.page-divider {
+    display: none !important;
+}
+.curved-transition {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+
+    /* No visible background/border */
+    background: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+
+    z-index: 20;
+}
+
+.curved-transition svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+.burgundy-fill {
+    fill: #610B14;
+    stroke: none;
+}
+
+.cream-fill {
+    fill: var(--bg-color);
+    stroke: none;
+}
+
+.curve-border {
+    fill: none;
+
+    stroke: #ead4ad;
+    stroke-width: 5;
+
+    vector-effect: non-scaling-stroke;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* REMOVE ANY STRAIGHT EDGE */
+.scratch-section {
+    border: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+
+    outline: 0 !important;
+    box-shadow: none !important;
+
+    margin-top: 0 !important;
+}
+/* =========================================
+   REMOVE STRAIGHT LINE ABOVE CURVE
+========================================= */
+
+.details-section {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.details-section::after {
+    display: none !important;
+    content: none !important;
+}
+
+.curved-transition {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+
+    /* overlap the previous section by 2px */
+    margin-top: -2px;
+}
+
+.curved-transition::before,
+.curved-transition::after {
+    display: none !important;
+    content: none !important;
+}
+
+.curved-transition svg {
+    border: none !important;
+    outline: none !important;
+}
+.curved-transition {
+    width: 100%;
+    height: 50px;
+    margin-top: -2px;
+    overflow: hidden;
+    background: transparent !important;
+    line-height: 0;
+}
+
+.burgundy-fill {
+    fill: #610B14;
+    stroke: none;
+}
+
+.cream-fill {
+    fill: var(--bg-color);
+    stroke: none;
+}
+
+.curve-border {
+    fill: none;
+    stroke: #ead4ad;
+    stroke-width: 2;
+    vector-effect: non-scaling-stroke;
+    stroke-linecap: round;
+}/* ==========================================
+   COMPACT SECOND PAGE
+========================================== */
+
+.details-section {
+    min-height: auto !important;
+
+    height: auto !important;
+
+    padding: 35px 20px 45px !important;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* Keep the actual content compact */
+.details-luxury {
+    padding: 10px 10px 5px !important;
+}
+
+
+/* Reduce spacing between elements */
+
+.details-ornament {
+    margin-bottom: 15px !important;
+}
+
+.bismillah-block {
+    margin-bottom: 18px !important;
+}
+
+.details-intro {
+    margin-bottom: 18px !important;
+}
+
+.person-block {
+    margin-bottom: 12px !important;
+}
+
+
+/* Name */
+.person-name {
+    margin-bottom: 8px !important;
+}
+
+
+/* Parents */
+.person-parents {
+    margin-bottom: 8px !important;
+}
+
+
+/* Place */
+.person-place {
+    margin-bottom: 10px !important;
+}
+
+
+/* Wax seal / bottom decoration if present */
+.details-seal,
+.wax-seal {
+    margin-top: 20px !important;
+    margin-bottom: 5px !important;
+}
+/* =====================================================
+   SCRATCH DATE + FLORAL DECORATION
+===================================================== */
+
+.scratch-date-decoration {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 190px;
+
+    margin-top: 10px;
+
+    overflow: visible;
+}
+
+
+/* =====================================================
+   EXISTING DATE CARDS
+===================================================== */
+
+.scratch-date-decoration .scratch-container {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   FLORAL IMAGE
+===================================================== */
+
+.scratch-floral {
+    position: absolute;
+
+    width: 190px;
+    height: 300px;
+
+    object-fit: contain;
+
+    z-index: 1;
+
+    pointer-events: none;
+    user-select: none;
+
+    display: block;
+}
+
+
+/* =====================================================
+   LEFT SIDE
+===================================================== */
+
+.scratch-floral-left {
+
+    left: -82px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+
+.scratch-floral-right {
+
+    right: -82px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        scaleX(-1);
+}
+
+
+/* =====================================================
+   KEEP SCRATCH CIRCLES ABOVE FLOWERS
+===================================================== */
+
+.scratch-date-decoration .scratch-card {
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .scratch-date-decoration {
+
+        min-height: 175px;
+
+        margin-top: 5px;
+    }
+
+    .scratch-floral {
+
+        width: 160px;
+        height: 255px;
+    }
+
+    .scratch-floral-left {
+
+        left: -42px;
+    }
+
+    .scratch-floral-right {
+
+        right: -42px;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .scratch-date-decoration {
+
+        min-height: 155px;
+    }
+
+    .scratch-floral {
+
+        width: 140px;
+        height: 225px;
+    }
+
+    .scratch-floral-left {
+
+        left: -70px;
+    }
+
+    .scratch-floral-right {
+
+        right: -70px;
+    }
+}
+/* ==========================================
+   SUBTLE FLORAL FLOATING ANIMATION
+========================================== */
+
+.scratch-floral {
+    animation: floralFloat 5s ease-in-out infinite;
+    will-change: transform;
+}
+
+
+/* Left flower */
+.scratch-floral-left {
+    animation-name: floralFloatLeft;
+}
+
+
+/* Right flower */
+.scratch-floral-right {
+    animation-name: floralFloatRight;
+}
+
+
+/* ==========================================
+   LEFT
+========================================== */
+
+@keyframes floralFloatLeft {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 4px))
+                   translateX(3px)
+                   rotate(0.5deg);
+    }
+}
+
+
+/* ==========================================
+   RIGHT
+========================================== */
+
+@keyframes floralFloatRight {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scaleX(-1) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 4px))
+                   translateX(-3px)
+                   scaleX(-1)
+                   rotate(-0.5deg);
+    }
+}
+/* =====================================================
+   LUXURY SCRATCH MEDALLION
+===================================================== */
+
+.scratch-card {
+    position: relative;
+
+    width: 90px;
+    height: 90px;
+
+    flex: 0 0 90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #fffdf7 0%,
+            #f8f0df 35%,
+            #ead9bb 72%,
+            #d1b47d 100%
+        );
+
+    border: 1px solid #b08850;
+
+    box-shadow:
+        0 4px 12px rgba(97, 11, 20, 0.10),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.65),
+        inset 0 0 0 5px rgba(176, 136, 80, 0.16);
+
+    overflow: visible;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   OUTER GOLD RING
+===================================================== */
+
+.scratch-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 4px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(176, 136, 80, 0.75);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   INNER RING
+===================================================== */
+
+.scratch-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(176, 136, 80, 0.35);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   SCRATCH BASE
+===================================================== */
+
+.scratch-base {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #fffdf7 0%,
+            #f8f0df 38%,
+            #eee1c9 68%,
+            #dcc39a 100%
+        );
+
+    box-shadow:
+        inset 0 1px 4px rgba(255, 255, 255, 0.8),
+        inset 0 -4px 8px rgba(97, 11, 20, 0.08);
+
+    z-index: 0;
+}
+
+
+/* =====================================================
+   SUBTLE METALLIC SHINE
+===================================================== */
+
+.scratch-base::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -20%;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            from 210deg,
+            transparent 0deg,
+            rgba(176, 136, 80, 0.18) 35deg,
+            transparent 70deg,
+            rgba(255, 255, 255, 0.45) 120deg,
+            transparent 170deg,
+            rgba(176, 136, 80, 0.12) 230deg,
+            transparent 280deg
+        );
+
+    opacity: 0.65;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   DATE TEXT
+===================================================== */
+
+.scratch-date {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 1.35rem;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #610B14;
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+
+/* =====================================================
+   SMALL CENTER ORNAMENT
+===================================================== */
+
+.scratch-base .scratch-date::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border: 1px solid #b08850;
+
+    transform: rotate(45deg);
+
+    left: 50%;
+
+    top: -17px;
+
+    margin-left: -3px;
+
+    opacity: 0.8;
+}
+
+
+/* =====================================================
+   SCRATCH CANVAS
+===================================================== */
+
+.scratch-canvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+    touch-action: none;
+}
+
+
+/* =====================================================
+   SUBTLE HOVER
+===================================================== */
+
+.scratch-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(97, 11, 20, 0.15),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.65),
+        inset 0 0 0 5px rgba(176, 136, 80, 0.16);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .scratch-card {
+
+        width: 82px;
+        height: 82px;
+
+        flex-basis: 82px;
+    }
+
+    .scratch-date {
+
+        font-size: 1.25rem;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .scratch-card {
+
+        width: 76px;
+        height: 76px;
+
+        flex-basis: 76px;
+    }
+
+    .scratch-date {
+
+        font-size: 1.15rem;
+    }
+}
+/* =====================================================
+   BUTTERFLY ABOVE RIGHT FLORAL
+===================================================== */
+
+.scratch-butterfly {
+
+    position: absolute;
+
+    width: 58px;
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 8;
+
+    pointer-events: none;
+    user-select: none;
+
+    /*
+       Right side positioning
+    */
+    right: 48px;
+    top: 5px;
+
+    /*
+       Slightly tilted for a natural position
+    */
+    transform: rotate(-8deg);
+
+    transform-origin: center;
+
+    /*
+       Gentle floating
+    */
+    animation: butterflyFloat 4.5s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   BUTTERFLY MOVEMENT
+===================================================== */
+
+@keyframes butterflyFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-5px)
+            rotate(-4deg);
+    }
+
+}/* ==========================================
+   BUTTERFLY
+========================================== */
+
+.scratch-butterfly {
+    position: absolute;
+
+    width: 52px;
+    height: auto;
+
+    right: 42px;
+    top: -5px;
+
+    z-index: 8;
+
+    pointer-events: none;
+    user-select: none;
+
+    opacity: 0;
+    visibility: hidden;
+
+    /* Starting position */
+    transform:
+        translate(8px, 12px)
+        scale(0.82)
+        rotate(-8deg);
+
+    filter: blur(1px);
+
+    transition:
+        opacity 1.5s ease,
+        filter 1.5s ease,
+        visibility 1.5s ease;
+}
+
+
+/* ==========================================
+   AFTER ALL 3 SCRATCHES
+========================================== */
+
+.scratch-butterfly.show {
+
+    visibility: visible;
+
+    opacity: 0.95;
+
+    filter: blur(0);
+
+    animation:
+        butterflyFlight 6s ease-in-out infinite;
+}
+
+
+/* ==========================================
+   NATURAL BUTTERFLY MOVEMENT
+========================================== */
+
+@keyframes butterflyFlight {
+
+    0% {
+        transform:
+            translate(8px, 12px)
+            rotate(-8deg);
+    }
+
+    15% {
+        transform:
+            translate(2px, 4px)
+            rotate(-3deg);
+    }
+
+    30% {
+        transform:
+            translate(-7px, -4px)
+            rotate(5deg);
+    }
+
+    45% {
+        transform:
+            translate(-3px, -9px)
+            rotate(1deg);
+    }
+
+    60% {
+        transform:
+            translate(8px, -3px)
+            rotate(-5deg);
+    }
+
+    75% {
+        transform:
+            translate(13px, 5px)
+            rotate(-2deg);
+    }
+
+    90% {
+        transform:
+            translate(5px, 9px)
+            rotate(-7deg);
+    }
+
+    100% {
+        transform:
+            translate(8px, 12px)
+            rotate(-8deg);
+    }
+}
+/* ==========================================
+   COUNTDOWN DIVIDER
+========================================== */
+
+.countdown-divider {
+    display: block;
+
+    width: 270px;
+    max-width: 82%;
+
+    height: auto;
+
+    margin: 8px auto 28px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+    user-select: none;
+
+    /* subtle movement */
+    animation: dividerFloat 7s ease-in-out infinite;
+
+    transform-origin: center center;
+
+    will-change: transform;
+}
+
+
+/* ==========================================
+   VERY SLOW LUXURY MOVEMENT
+========================================== */
+
+@keyframes dividerFloat {
+
+    0%,
+    100% {
+        transform:
+            translateX(0)
+            translateY(0);
+    }
+
+    25% {
+        transform:
+            translateX(2px)
+            translateY(-1px);
+    }
+
+    50% {
+        transform:
+            translateX(0)
+            translateY(-2px);
+    }
+
+    75% {
+        transform:
+            translateX(-2px)
+            translateY(-1px);
+    }
+
+}
+/* Move countdown numbers slightly upward */
+.minimal-countdown .timer {
+    position: relative;
+    top: -40px;
+}
+.minimal-countdown > p {
+    position: relative;
+    top: 40px;
 }

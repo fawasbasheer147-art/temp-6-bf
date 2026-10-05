@@ -173,26 +173,136 @@
     </div>
 </section>
 
-    <!-- Scratch Page Section -->
-    <section class="scratch-section">
+<!-- Curved transition between second page and scratch page -->
+<div class="curved-transition">
+
+    <svg
+        viewBox="0 0 1440 140"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg">
+
+        <!-- BURGUNDY ABOVE THE CURVE -->
+        <path
+            class="burgundy-fill"
+            d="
+                M0 0
+                L1440 0
+                L1440 35
+
+                C1240 5 1090 15 930 65
+                C770 115 660 135 500 82
+                C340 30 180 5 0 35
+
+                Z
+            "
+        />
+
+        <!-- CREAM BELOW THE CURVE -->
+        <path
+            class="cream-fill"
+            d="
+                M0 35
+
+                C180 5 340 30 500 82
+                C660 135 770 115 930 65
+                C1090 15 1240 5 1440 35
+
+                L1440 140
+                L0 140
+
+                Z
+            "
+        />
+
+        <!-- SINGLE GOLD CURVE -->
+        <path
+            class="curve-border"
+            d="
+                M0 35
+
+                C180 5 340 30 500 82
+                C660 135 770 115 930 65
+                C1090 15 1240 5 1440 35
+            "
+        />
+
+    </svg>
+
+</div>
+
+
+<!-- REVEAL SECTION -->
+
+<!-- Scratch Page Section -->
+<section class="scratch-section">
         <div class="content-wrapper scroll-animate">
             <p class="reveal-text">Reveal</p>
             <p class="discover-text">SCRATCH TO<br>DISCOVER THE DATE</p>
 
-            <div class="scratch-container">
-                <div class="scratch-card">
-                    <div class="scratch-base"><span class="scratch-date">08</span></div>
-                    <canvas class="scratch-canvas" width="90" height="90"></canvas>
-                </div>
-                <div class="scratch-card">
-                    <div class="scratch-base"><span class="scratch-date">NOV</span></div>
-                    <canvas class="scratch-canvas" width="90" height="90"></canvas>
-                </div>
-                <div class="scratch-card">
-                    <div class="scratch-base"><span class="scratch-date">2026</span></div>
-                    <canvas class="scratch-canvas" width="90" height="90"></canvas>
-                </div>
+            <div class="scratch-date-decoration">
+
+    <!-- LEFT FLOWER -->
+    <img
+        src="assests/images/scratch-floral.png"
+        class="scratch-floral scratch-floral-left"
+        alt=""
+        aria-hidden="true"
+    >
+    <!-- RIGHT BUTTERFLY -->
+
+
+    <!-- EXISTING SCRATCH CARDS -->
+    <div class="scratch-container">
+
+        <div class="scratch-card">
+            <div class="scratch-base">
+                <span class="scratch-date">08</span>
             </div>
+            <canvas
+                class="scratch-canvas"
+                width="90"
+                height="90">
+            </canvas>
+        </div>
+
+        <div class="scratch-card">
+            <div class="scratch-base">
+                <span class="scratch-date">NOV</span>
+            </div>
+            <canvas
+                class="scratch-canvas"
+                width="90"
+                height="90">
+            </canvas>
+        </div>
+
+        <div class="scratch-card">
+            <div class="scratch-base">
+                <span class="scratch-date">2026</span>
+            </div>
+            <canvas
+                class="scratch-canvas"
+                width="90"
+                height="90">
+            </canvas>
+        </div>
+
+    </div>
+
+    <!-- RIGHT FLOWER -->
+    <img
+        src="assests/images/scratch-floral.png"
+        class="scratch-floral scratch-floral-right"
+        alt=""
+        aria-hidden="true"
+    >
+<img
+    src="assests/images/butterfly.png"
+    class="scratch-butterfly"
+    alt=""
+    aria-hidden="true"
+>
+</div>
         </div>
     </section>
 
@@ -203,6 +313,12 @@
             <!-- Minimal Countdown Section -->
             <div class="minimal-countdown" style="margin-bottom: 20px;">
                 <p style="font-family: 'Marquis', serif; font-style: italic; font-size: 1.9rem; color: var(--text-primary); margin-bottom: 15px;">Days to Go...</p>
+                <img
+    src="assests/images/divider.png"
+    class="countdown-divider"
+    alt=""
+    aria-hidden="true"
+>
 
                 <div class="timer" style="margin-top: 15px; gap: 20px;">
                     <div class="time-block-minimal">
@@ -285,6 +401,7 @@
                     <p class="map-hint">
                         Tap to view location on Google Maps
                     </p>
+                    
 
                 </div>
             </div>

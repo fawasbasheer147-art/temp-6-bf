@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const followupVideo = document.getElementById('followupVideo');
     const transitionFrame = document.getElementById('transitionFrame');
     const followupContent = document.getElementById('followupContent');
+    const pageDivider = document.querySelector('.page-divider');
     const playOverlay = document.getElementById('playOverlay');
     const textOverlay = document.getElementById('textOverlay');
     const music = document.getElementById('bgMusic');
@@ -69,6 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
     video.addEventListener('ended', async () => {
         const heroSection = document.querySelector('.hero-section');
 
+        if (pageDivider) {
+            pageDivider.classList.add('is-visible');
+            pageDivider.setAttribute('aria-hidden', 'false');
+        }
+
         if (!transitionFrameCaptured) {
             transitionFrameCaptured = captureTransitionFrame();
         }
@@ -122,7 +128,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupScratchCards();
     setupCountdown();
+    setupRsvp();
 });
+
+function setupRsvp() {
+    const form = document.getElementById('rsvpForm');
+    const guestCount = document.getElementById('guestCount');
+    const guestField = document.getElementById('rsvpGuests');
+    const message = document.getElementById('rsvpMessage');
+
+    form.addEventListener('change', event => {
+        if (event.target.name !== 'attendance') {
+            return;
+        }
+
+        const isAttending = event.target.value === 'yes';
+        guestField.hidden = !isAttending;
+        guestCount.disabled = !isAttending;
+        guestCount.required = isAttending;
+
+        if (!isAttending) {
+            guestCount.value = '';
+        }
+
+        form.querySelectorAll('.rsvp-choice').forEach(choice => {
+            choice.classList.toggle('is-selected', choice.querySelector('input').checked);
+        });
+    });
+
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const name = String(formData.get('name')).trim();
+        const attendance = formData.get('attendance');
+
+        if (attendance === 'yes') {
+            const count = formData.get('guestCount');
+            message.textContent = `Thank you, ${name}! We look forward to celebrating with your party of ${count}.`;
+        } else {
+            message.textContent = `Thank you for letting us know, ${name}. You’ll be in our thoughts on our special day.`;
+        }
+
+        message.classList.add('is-visible');
+    });
+}
 
 function setupScratchCards() {
     const canvases = document.querySelectorAll('.scratch-canvas');
@@ -289,6 +339,11 @@ window.addEventListener('touchend', () => {
     });
 
     function onAllScratched() {
+        const butterfly = document.querySelector('.scratch-butterfly');
+
+if (butterfly) {
+    butterfly.classList.add('show');
+}
         const scratchContainer = document.querySelector('.scratch-container');
         let originY = 0.5;
         let originX = 0.5;
@@ -364,52 +419,6 @@ function setupCountdown() {
     }, 1000);
 }
 
-
-
-const yesBtn = document.getElementById('yesBtn');
-const noBtn = document.getElementById('noBtn');
-const message = document.getElementById('rsvpMessage');
-
-if (yesBtn && noBtn) {
-
-    yesBtn.addEventListener('click', (e) => {
-        message.innerText = "Yay! Can't wait to celebrate with you 🎉";
-        message.style.opacity = '1';
-
-        yesBtn.classList.add('happy');
-        setTimeout(() => yesBtn.classList.remove('happy'), 600);
-
-        let originY = 0.8;
-        let originX = 0.5;
-        if (e.target) {
-            const rect = e.target.getBoundingClientRect();
-            originY = (rect.top + rect.height / 2) / window.innerHeight;
-            originX = (rect.left + rect.width / 2) / window.innerWidth;
-        }
-
-        if (typeof confetti === 'function') {
-            confetti({
-                particleCount: 120,
-                spread: 90,
-                origin: { x: originX, y: originY },
-                colors: ['#610B14', '#610B14', '#F7F0E3', '#A68B5B'],
-                shapes: ['circle', 'square'],
-                scalar: 1.1,
-                zIndex: 9999,
-                drift: 0,
-                ticks: 200
-            });
-        }
-    });
-
-    noBtn.addEventListener('click', () => {
-        message.innerText = "We’ll miss you... but you’ll be in our hearts ❤️ ";
-        message.style.opacity = '1';
-
-        noBtn.classList.add('sad');
-        setTimeout(() => noBtn.classList.remove('sad'), 500);
-    });
-}
 
 
 // ❤️ HEART TRAIL EFFECT
